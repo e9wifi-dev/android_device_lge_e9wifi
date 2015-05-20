@@ -16,13 +16,13 @@ on early-init
 on init
 
 on fs
-    mount_all fstab.e7
+    mount_all fstab.e9wifi
     restorecon_recursive /sns
     restorecon_recursive /persist
     restorecon_recursive /persist-lg
 
     # Enable zRAM
-    swapon_all /fstab.e7
+    swapon_all /fstab.e9wifi
 
     setprop ro.crypto.fuse_sdcard true
 

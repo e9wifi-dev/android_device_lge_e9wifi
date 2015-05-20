@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export VENDOR=lge
-export DEVICE=v700
+export DEVICE=e9wifi
 
 set -e
 
