@@ -17,12 +17,12 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Inherit from v700 device
-$(call inherit-product, device/lge/v700/device.mk)
+# Inherit from e9wifi device
+$(call inherit-product, device/lge/e9wifi/device.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := v700
-PRODUCT_NAME := full_v700
+PRODUCT_DEVICE := e9wifi
+PRODUCT_NAME := full_e9wifi
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-V700
 PRODUCT_MANUFACTURER := LGE

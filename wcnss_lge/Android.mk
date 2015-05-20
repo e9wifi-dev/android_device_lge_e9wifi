@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter v700,$(TARGET_DEVICE)),)
+ifneq ($(filter e9wifi e9 v700,$(TARGET_DEVICE)),)
 
 LOCAL_PATH:= $(call my-dir)
 

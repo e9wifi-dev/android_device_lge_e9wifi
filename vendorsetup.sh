@@ -1,1 +1,1 @@
-add_lunch_combo cm_v700-userdebug
+add_lunch_combo cm_e9wifi-userdebug

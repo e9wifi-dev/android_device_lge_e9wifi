@@ -14,11 +14,11 @@
 # limitations under the License.
 
 # inherit from the proprietary version
--include vendor/lge/v700/BoardConfigVendor.mk
+-include vendor/lge/e9wifi/BoardConfigVendor.mk
 
-TARGET_OTA_ASSERT_DEVICE := v700,e9,e9wifi
+TARGET_OTA_ASSERT_DEVICE := e9,e9wifi,e9wifi
 
-LOCAL_PATH := device/lge/v700
+LOCAL_PATH := device/lge/e9wifi
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
@@ -35,20 +35,20 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/v700/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/e9wifi/bluetooth
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/lge/v700/kernel
+TARGET_PREBUILT_KERNEL := device/lge/e9wifi/kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 earlyprintk androidboot.console=ttyHSL0 user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=e9wifi androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --dt device/lge/v700/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100
-BOARD_CUSTOM_BOOTIMG_MK := device/lge/v700/mkbootimg.mk
+BOARD_MKBOOTIMG_ARGS := --dt device/lge/e9wifi/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100
+BOARD_CUSTOM_BOOTIMG_MK := device/lge/e9wifi/mkbootimg.mk
 BOARD_CUSTOM_BOOTIMG := true
 
 # Audio
@@ -113,7 +113,7 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_LGE_RIL_SYMBOLS
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/lge/v700/rootdir/etc/fstab.e9wifi
+TARGET_RECOVERY_FSTAB := device/lge/e9wifi/rootdir/etc/fstab.e9wifi
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -123,7 +123,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/lge/v700/sepolicy
+BOARD_SEPOLICY_DIRS += device/lge/e9wifi/sepolicy
 BOARD_SEPOLICY_UNION += \
   file_contexts \
   file.te \
