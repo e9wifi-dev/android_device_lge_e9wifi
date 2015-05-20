@@ -1,14 +1,13 @@
 # Audio
 bin/adsprpcd
-bin/fm_qsoc_patches
-etc/ACDB/Bluetooth_cal.acdb
-etc/ACDB/General_cal.acdb
-etc/ACDB/Global_cal.acdb
-etc/ACDB/Handset_cal.acdb
-etc/ACDB/Hdmi_cal.acdb
-etc/ACDB/Headset_cal.acdb
-etc/ACDB/Speaker_cal.acdb
-etc/ACDB/workspaceFile.qwsp
+etc/acdbdata/Bluetooth_cal.acdb
+etc/acdbdata/General_cal.acdb
+etc/acdbdata/Global_cal.acdb
+etc/acdbdata/Handset_cal.acdb
+etc/acdbdata/Hdmi_cal.acdb
+etc/acdbdata/Headset_cal.acdb
+etc/acdbdata/Speaker_cal.acdb
+etc/acdbdata/workspaceFile.qwsp
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
@@ -18,9 +17,6 @@ vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
-vendor/lib/liblisten.so
-vendor/lib/liblistenhardware.so
-vendor/lib/liblistenjni.so
 vendor/lib/liblistensoundmodel.so
 vendor/lib/rfsa/adsp/libadsp_denoise_skel.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
@@ -30,36 +26,20 @@ vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 # Camera
 bin/mm-qcamera-daemon
 etc/firmware/cpp_firmware_v1_2_0.fw
-lib/hw/camera.vendor.msm8226.so
 lib/libchromatix_hi543_common.so
 lib/libchromatix_hi543_default_video.so
 lib/libchromatix_hi543_preview.so
 lib/libchromatix_hi543_snapshot.so
-lib/libchromatix_imx111_common.so
-lib/libchromatix_imx111_default_video.so
-lib/libchromatix_imx111_preview.so
-lib/libchromatix_imx111_snapshot.so
-lib/libchromatix_imx119_common.so
-lib/libchromatix_imx119_default_video.so
-lib/libchromatix_imx119_preview.so
-lib/libchromatix_imx179_common.so
-lib/libchromatix_imx179_default_video.so
-lib/libchromatix_imx179_preview.so
-lib/libchromatix_imx179_snapshot.so
 lib/libmm-qcamera.so
-lib/libmmcamera_hi543.so
-lib/libmmcamera_hi707.so
-lib/libmmcamera_imx111.so
-lib/libmmcamera_imx119.so
-lib/libmmcamera_imx179.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
-lib/libmorpho_memory_allocator.so
-lib/libmorpho_panorama_gp.so
+lib/libmorpho_image_stab31.so
+lib/libmorpho_noise_reduction.so
 lib/libqomx_core.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmm-hdcpmgr.so
+vendor/lib/libmmcamera_mt9m114.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -76,9 +56,8 @@ vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hdr_lib.so
 vendor/lib/libmmcamera_hi351.so
 vendor/lib/libmmcamera_hi543_eeprom.so
+vendor/lib/libmmcamera_hi543.so
 vendor/lib/libmmcamera_imglib.so
-vendor/lib/libmmcamera_imx111_eeprom.so
-vendor/lib/libmmcamera_imx179_eeprom.so
 vendor/lib/libmmcamera_mt9m114.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
@@ -86,25 +65,20 @@ vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
-vendor/lib/libmorpho_image_stab31.so
-vendor/lib/libmorpho_noise_reduction.so
 vendor/lib/liboemcamera.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 
 # DRM
 bin/qseecomd
-lib/drm/libfwdlockengine.so
-lib/liboemcrypto.so
+lib/drm/libdrmwvmplugin.so
+vendor/lib/liboemcrypto.so
 vendor/firmware/widevine.b00
 vendor/firmware/widevine.b01
 vendor/firmware/widevine.b02
 vendor/firmware/widevine.b03
 vendor/firmware/widevine.mdt
-vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/libQSEEComAPI.so
-vendor/lib/libStDrvInt.so
-vendor/lib/libWVphoneAPI.so
 vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/libdrmdecrypt.so
 vendor/lib/libdrmdiag.so
@@ -117,7 +91,7 @@ vendor/lib/libwvm.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
-# GPS
+# Gps
 lib/hw/gps.default.so
 lib/libgps.utils.so
 lib/libloc_api_v02.so
@@ -143,11 +117,10 @@ vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
 vendor/lib/libOpenCL.so
-vendor/lib/libOpenVG.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libc2d30-a3xx.so
-vendor/lib/libc2d30.so
+vendor/lib/libc2d30-a4xx.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/librs_adreno.so
@@ -171,19 +144,16 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 
 # Postprocessing
-bin/mm-pp-daemon
 vendor/lib/libmm-abl-oem.so
 vendor/lib/libmm-abl.so
 
 # Perf
 bin/mpdecision
-vendor/lib/libqc-opt.so
 
 # Sensors
 bin/irsc_util
 bin/sensors.qcom
 vendor/lib/hw/sensors.msm8226.so
-vendor/lib/libbmc050.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 
@@ -201,7 +171,6 @@ vendor/lib/libtime_genoff.so
 # Radio
 bin/ims_rtp_daemon
 bin/netmgrd
-bin/qmiproxy
 bin/qmuxd
 bin/rmt_storage
 lib/libcnefeatureconfig.so
@@ -224,7 +193,6 @@ vendor/lib/libcneapiclient.so
 vendor/lib/libconfigdb.so
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
-vendor/lib/libdsnetutils.so
 vendor/lib/libdsucsd.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
@@ -247,7 +215,7 @@ vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
 
-# Venus Firmware
+# Venus firmware
 etc/firmware/venus.b00
 etc/firmware/venus.b01
 etc/firmware/venus.b02
