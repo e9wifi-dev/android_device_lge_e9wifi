@@ -13,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := device/lge/e9wifi
+
 # inherit from the proprietary version
 -include vendor/lge/e9wifi/BoardConfigVendor.mk
 
-TARGET_OTA_ASSERT_DEVICE := e9,e9wifi,e9wifi
-
-LOCAL_PATH := device/lge/e9wifi
+# Assert
+TARGET_OTA_ASSERT_DEVICE := e9wifi,v700
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
@@ -42,13 +43,14 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/lge/e9wifi/kernel
+TARGET_KERNEL_SOURCE := kernel/lge/e9wifi
+TARGET_KERNEL_CONFIG := cyanogenmod_e9wifi_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 earlyprintk androidboot.console=ttyHSL0 user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=e9wifi androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --dt device/lge/e9wifi/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100
-BOARD_CUSTOM_BOOTIMG_MK := device/lge/e9wifi/mkbootimg.mk
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_CUSTOM_BOOTIMG := true
 
 # Audio
@@ -117,7 +119,9 @@ TARGET_RECOVERY_FSTAB := device/lge/e9wifi/rootdir/etc/fstab.e9wifi
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
+BOARD_RECOVERY_SWIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
@@ -141,10 +145,10 @@ BOARD_SEPOLICY_UNION += \
   wcnss_service.te
 
 # Time services
-# TODO (needs libtime_genoff)
+# (needs libtime_genoff)
 # BOARD_USES_QC_TIME_SERVICES := true
 
-# Wifi
+# WiFi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211

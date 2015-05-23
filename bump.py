@@ -8,7 +8,7 @@ import struct
 import sys
 
 usage = """\
-Usage: open_bump.py "<image_file>" "<output_image>"
+Usage: ./bump.py "<image_file>" "<output_image>"
   image_file        - <required> path to the image file to bump
   output_image      - <optional> path to output the bumped file to (defaults to <image_file>_bumped.img\
 """
